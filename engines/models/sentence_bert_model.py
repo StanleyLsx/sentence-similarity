@@ -24,13 +24,13 @@ class BertwwmModel(nn.Module, ABC):
         for param in self.bertwwm_model.parameters():
             param.requires_grad = False
 
-    def forward(self, q_ids, q_masks, r_ids, r_masks):
+    def forward(self, s1_ids, s1_masks, s2_ids, s2_masks):
         with torch.no_grad():
-            q_hidden = self.bertwwm_model(q_ids, attention_mask=q_masks)[0].to(self.device)
-            r_hidden = self.bertwwm_model(r_ids, attention_mask=r_masks)[0].to(self.device)
-        q_average = F.avg_pool1d(q_hidden.transpose(1, 2), q_hidden.size(1)).squeeze(-1)
-        r_average = F.avg_pool1d(r_hidden.transpose(1, 2), r_hidden.size(1)).squeeze(-1)
-        combined = torch.cat([q_average, r_average, q_average-r_average], -1)
+            s1_hidden = self.bertwwm_model(s1_ids, attention_mask=s1_masks)[0].to(self.device)
+            s2_hidden = self.bertwwm_model(s2_ids, attention_mask=s2_masks)[0].to(self.device)
+        s1_average = F.avg_pool1d(s1_hidden.transpose(1, 2), s1_hidden.size(1)).squeeze(-1)
+        s2_average = F.avg_pool1d(s2_hidden.transpose(1, 2), s2_hidden.size(1)).squeeze(-1)
+        combined = torch.cat([s1_average, s2_average, s1_average-s2_average], -1)
         dropout_results = self.dropout(combined)
         logits = self.linear(dropout_results)
         probabilities = F.softmax(logits, dim=-1)

@@ -2,7 +2,7 @@
 # @Time : 2020/10/28 21:13 
 # @Author : lishouxian
 # @Email : gzlishouxian@gmail.com
-# @File : data.py 
+# @File : datasets.py
 # @Software: PyCharm
 from torch.utils.data import Dataset
 from transformers import BertTokenizer
@@ -19,13 +19,13 @@ class DataPrecessForSentence(Dataset):
         self.logger = logger
         self.tokenizer = BertTokenizer.from_pretrained('hfl/chinese-bert-wwm-ext')
         self.max_sequence_length = 103
-        self.q_ids, self.q_masks, self.r_ids, self.r_masks, self.labels = self.prepare_data(df_data)
+        self.s1_ids, self.s1_masks, self.s2_ids, self.s2_masks, self.labels = self.prepare_data(df_data)
 
     def __len__(self):
         return len(self.labels)
 
     def __getitem__(self, idx):
-        return self.q_ids[idx], self.q_masks[idx], self.r_ids[idx], self.r_masks[idx], self.labels[idx]
+        return self.s1_ids[idx], self.s1_masks[idx], self.s2_ids[idx], self.s2_masks[idx], self.labels[idx]
 
     def encode(self, text):
         padding_id = self.tokenizer.pad_token_id
@@ -38,23 +38,23 @@ class DataPrecessForSentence(Dataset):
         return input_ids, input_masks
 
     def prepare_data(self, df_data):
-        input_ids_q, input_masks_q = [], []
-        input_ids_r, input_masks_r = [], []
+        input_ids_1, input_masks_1 = [], []
+        input_ids_2, input_masks_2 = [], []
         for _, row in tqdm(df_data.iterrows()):
-            query, reply = row.query, row.reply
-            query_input_ids, query_input_masks = self.encode(query)
-            reply_input_ids, reply_input_masks = self.encode(reply)
+            sent1, sent2 = row.sentence1, row.sentence2
+            sent1_ids, sent1_masks = self.encode(sent1)
+            sent2_ids, sent2_masks = self.encode(sent2)
 
-            input_ids_q.append(query_input_ids)
-            input_masks_q.append(query_input_masks)
+            input_ids_1.append(sent1_ids)
+            input_masks_1.append(sent1_masks)
 
-            input_ids_r.append(reply_input_ids)
-            input_masks_r.append(reply_input_masks)
+            input_ids_2.append(sent2_ids)
+            input_masks_2.append(sent2_masks)
 
         labels = df_data['label'].values
-        ids_q = torch.LongTensor(input_ids_q)
-        masks_q = torch.LongTensor(input_masks_q)
-        ids_r = torch.LongTensor(input_ids_r)
-        masks_r = torch.LongTensor(input_masks_r)
+        ids_1 = torch.LongTensor(input_ids_1)
+        masks_1 = torch.LongTensor(input_masks_1)
+        ids_2 = torch.LongTensor(input_ids_2)
+        masks_2 = torch.LongTensor(input_masks_2)
         labels = torch.LongTensor(labels)
-        return ids_q, masks_q, ids_r, masks_r, labels
+        return ids_1, masks_1, ids_2, masks_2, labels

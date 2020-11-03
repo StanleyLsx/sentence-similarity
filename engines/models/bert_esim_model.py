@@ -59,15 +59,15 @@ class BertwwmEsimModel(nn.Module, ABC):
         # output: batch_size * (4 * hidden_size)
         return torch.cat([p1, p2], 1)
 
-    def forward(self, q_ids, q_masks, r_ids, r_masks):
+    def forward(self, s1_ids, s1_masks, s2_ids, s2_masks):
         with torch.no_grad():
-            q_hidden = self.bertwwm_model(q_ids, attention_mask=q_masks)[0].to(self.device)
-            r_hidden = self.bertwwm_model(r_ids, attention_mask=r_masks)[0].to(self.device)
+            s1_hidden = self.bertwwm_model(s1_ids, attention_mask=s1_masks)[0].to(self.device)
+            s2_hidden = self.bertwwm_model(s2_ids, attention_mask=s2_masks)[0].to(self.device)
         # input encoding
-        o1, _ = self.bilstm1(q_hidden)
-        o2, _ = self.bilstm1(r_hidden)
+        o1, _ = self.bilstm1(s1_hidden)
+        o2, _ = self.bilstm1(s2_hidden)
         # local inference modeling
-        q1_align, q2_align = self.soft_align_attention(o1, o2, q_masks, r_masks)
+        q1_align, q2_align = self.soft_align_attention(o1, o2, s1_masks, s2_masks)
 
         # Compose
         # batch_size * seq_len * (8 * hidden_size)

@@ -1,0 +1,21 @@
+2020-11-03 15:43:41
+train_data_length:100000
+
+val_data_length:10000
+
+epoch:1/15
+training step:   100, loss: 0.63714, precision: 0.719 recall: 0.648 f1: 0.681 
+training step:   200, loss: 0.52031, precision: 0.800 recall: 0.667 f1: 0.727 
+training step:   300, loss: 0.48834, precision: 0.820 recall: 0.676 f1: 0.741 
+training step:   400, loss: 0.44444, precision: 0.857 recall: 0.750 f1: 0.800 
+training step:   500, loss: 0.42781, precision: 0.831 recall: 0.855 f1: 0.843 
+training step:   600, loss: 0.36900, precision: 0.817 recall: 0.829 f1: 0.823 
+training step:   700, loss: 0.39964, precision: 0.857 recall: 0.857 f1: 0.857 
+time consumption of training:11.47(min)
+start evaluate model...
+loss: 0.38870, precision: 0.804 recall: 0.841 f1: 0.822 accuracy: 0.826 
+time consumption of evaluating:59.58(min)
+find the new best model with f1: 0.822
+epoch:2/15
+training step:   100, loss: 0.39864, precision: 0.800 recall: 0.825 f1: 0.812 
+training step:   200, loss: 0.40883, precision: 0.846 recall: 0.764 f1: 0.803 
