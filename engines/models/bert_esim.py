@@ -2,7 +2,7 @@
 # @Time : 2020/10/29 23:35 
 # @Author : lishouxian
 # @Email : gzlishouxian@gmail.com
-# @File : bert_esim_model.py
+# @File : bert_esim.py
 # @Software: PyCharm
 from abc import ABC
 from torch import nn

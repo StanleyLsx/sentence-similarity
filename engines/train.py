@@ -7,13 +7,12 @@
 import pandas as pd
 from torch.utils.data import DataLoader
 from engines.data import DataPrecessForSentence
-from engines.models.sentence_bert_model import BertwwmModel
-from engines.models.bert_esim_model import BertwwmEsimModel
-from engines.utils.metrics import correct_predictions, cal_metrics, search_f1
-from sklearn.model_selection import GroupKFold
+from engines.models.sentence_bert import BertwwmModel
+from engines.models.esim import EsimModel
+from engines.models.bert_esim import BertwwmEsimModel
+from engines.utils.metrics import correct_predictions, cal_metrics
 from transformers.optimization import AdamW
 from tqdm import tqdm
-import numpy as np
 import torch
 import time
 

@@ -1,10 +1,9 @@
 # Sentence Similarity
 基于pytorch写的一些句子相似度模型  
 
-## sentence-Bert
+## Esim
 
 ## Bert+Esim
 
-备用
-
+## sentence-Bert
 

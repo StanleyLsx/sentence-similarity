@@ -23,16 +23,3 @@ def correct_predictions(output_probabilities, targets):
     correct = out_classes == targets
     correct_nums = correct.sum()
     return correct_nums.item()
-
-
-def search_f1(y_true, y_pred):
-    best_f1 = 0
-    best_threshold = 0
-    for i in range(30, 60):
-        threshold = i / 100
-        y_pred_bin = (y_pred > threshold).astype(int)
-        score = metrics.f1_score(y_true, y_pred_bin, average='binary')
-        if score > best_f1:
-            best_f1 = score
-            best_threshold = threshold
-    return best_f1, best_threshold
