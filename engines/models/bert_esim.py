@@ -87,12 +87,3 @@ class BertwwmEsimModel(nn.Module, ABC):
         logits = self.linear(x)
         probabilities = F.softmax(logits, dim=-1)
         return logits, probabilities
-
-
-
-
-
-
-
-
-

@@ -78,7 +78,7 @@ def train(device, logger):
     logger.info('val_data_length:{}\n'.format(len(val_data_manger)))
     val_loader = DataLoader(val_data_manger, shuffle=False, batch_size=batch_size)
 
-    model = BertwwmEsimModel(device).to(device)
+    model = EsimModel(device).to(device)
     params = list(model.parameters())
     optimizer = AdamW(params, lr=learning_rate)
     # 定义梯度策略

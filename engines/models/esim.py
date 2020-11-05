@@ -11,17 +11,18 @@ import torch
 
 
 class EsimModel(nn.Module, ABC):
-    def __init__(self, device, vocab_size, num_classes=2):
+    def __init__(self, device, num_classes=2):
         super().__init__()
         self.device = device
         self.dropout = 0.5
         self.embedding_dim = 300
         self.hidden_dim = 200
         self.linear_size = 128
-        self.vocab_size = vocab_size
+        self.vocab_size = 21128
+        # 直接使用了bert的vocab
         self.num_classes = num_classes
-        self.embeds = nn.Embedding(self.vocab_size, self.embeds_dim)
-        self.bn_embeds = nn.BatchNorm1d(self.embeds_dim)
+        self.embeds = nn.Embedding(self.vocab_size, self.embedding_dim)
+        self.bn_embeds = nn.BatchNorm1d(self.embedding_dim)
         self.bilstm1 = nn.LSTM(self.embedding_dim, self.hidden_dim, batch_first=True, bidirectional=True)
         self.bilstm2 = nn.LSTM(self.hidden_dim * 8, self.hidden_dim, batch_first=True, bidirectional=True)
         self.linear = nn.Linear(8 * self.hidden_dim, num_classes)
