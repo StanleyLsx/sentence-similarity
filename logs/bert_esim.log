@@ -1,0 +1,192 @@
+2020-11-06 03:25:05
+train_data_length:100000
+
+val_data_length:10000
+
+epoch:1/15
+training step:   100, loss: 0.53466, precision: 0.768 recall: 0.716 f1: 0.741 
+training step:   200, loss: 0.50643, precision: 0.650 recall: 0.780 f1: 0.709 
+training step:   300, loss: 0.47427, precision: 0.742 recall: 0.821 f1: 0.780 
+training step:   400, loss: 0.44086, precision: 0.791 recall: 0.883 f1: 0.835 
+training step:   500, loss: 0.35139, precision: 0.906 recall: 0.727 f1: 0.807 
+training step:   600, loss: 0.41977, precision: 0.843 recall: 0.729 f1: 0.782 
+training step:   700, loss: 0.35593, precision: 0.828 recall: 0.842 f1: 0.835 
+time consumption of training:11.57(min)
+start evaluate model...
+loss: 0.38716, precision: 0.828 recall: 0.834 f1: 0.831 accuracy: 0.832 
+time consumption of evaluating:59.60(min)
+saved the new best model with f1: 0.831
+epoch:2/15
+training step:   100, loss: 0.37276, precision: 0.879 recall: 0.806 f1: 0.841 
+training step:   200, loss: 0.33143, precision: 0.902 recall: 0.797 f1: 0.846 
+training step:   300, loss: 0.31347, precision: 0.881 recall: 0.881 f1: 0.881 
+training step:   400, loss: 0.31682, precision: 0.908 recall: 0.819 f1: 0.861 
+training step:   500, loss: 0.29441, precision: 0.915 recall: 0.855 f1: 0.884 
+training step:   600, loss: 0.28498, precision: 0.901 recall: 0.889 f1: 0.895 
+training step:   700, loss: 0.34494, precision: 0.877 recall: 0.864 f1: 0.870 
+time consumption of training:11.54(min)
+start evaluate model...
+loss: 0.37634, precision: 0.887 recall: 0.811 f1: 0.847 accuracy: 0.840 
+time consumption of evaluating:59.69(min)
+saved the new best model with f1: 0.847
+epoch:3/15
+training step:   100, loss: 0.31019, precision: 0.782 recall: 0.896 f1: 0.835 
+training step:   200, loss: 0.25499, precision: 0.908 recall: 0.908 f1: 0.908 
+training step:   300, loss: 0.23390, precision: 0.929 recall: 0.890 f1: 0.909 
+training step:   400, loss: 0.21227, precision: 0.923 recall: 0.923 f1: 0.923 
+training step:   500, loss: 0.35727, precision: 0.765 recall: 0.897 f1: 0.825 
+training step:   600, loss: 0.24948, precision: 0.933 recall: 0.903 f1: 0.918 
+training step:   700, loss: 0.25459, precision: 0.844 recall: 0.915 f1: 0.878 
+time consumption of training:11.53(min)
+start evaluate model...
+loss: 0.39837, precision: 0.846 recall: 0.828 f1: 0.837 accuracy: 0.836 
+time consumption of evaluating:59.75(min)
+epoch:4/15
+training step:   100, loss: 0.22172, precision: 0.900 recall: 0.926 f1: 0.913 
+training step:   200, loss: 0.22683, precision: 0.939 recall: 0.925 f1: 0.932 
+training step:   300, loss: 0.25398, precision: 0.883 recall: 0.883 f1: 0.883 
+training step:   400, loss: 0.19031, precision: 0.898 recall: 0.914 f1: 0.906 
+training step:   500, loss: 0.21563, precision: 0.924 recall: 0.924 f1: 0.924 
+training step:   600, loss: 0.23460, precision: 0.875 recall: 0.900 f1: 0.887 
+training step:   700, loss: 0.20720, precision: 0.952 recall: 0.909 f1: 0.930 
+time consumption of training:11.53(min)
+start evaluate model...
+loss: 0.42419, precision: 0.810 recall: 0.866 f1: 0.837 accuracy: 0.842 
+time consumption of evaluating:59.74(min)
+epoch:5/15
+training step:   100, loss: 0.24867, precision: 0.937 recall: 0.922 f1: 0.929 
+training step:   200, loss: 0.21763, precision: 0.896 recall: 0.896 f1: 0.896 
+training step:   300, loss: 0.19298, precision: 0.859 recall: 0.948 f1: 0.902 
+training step:   400, loss: 0.13336, precision: 1.000 recall: 0.919 f1: 0.958 
+training step:   500, loss: 0.23287, precision: 0.921 recall: 0.879 f1: 0.899 
+training step:   600, loss: 0.19864, precision: 0.909 recall: 0.938 f1: 0.923 
+training step:   700, loss: 0.17766, precision: 0.932 recall: 0.917 f1: 0.924 
+time consumption of training:11.54(min)
+start evaluate model...
+loss: 0.41891, precision: 0.851 recall: 0.845 f1: 0.848 accuracy: 0.848 
+time consumption of evaluating:59.71(min)
+saved the new best model with f1: 0.848
+epoch:6/15
+training step:   100, loss: 0.17755, precision: 0.889 recall: 0.949 f1: 0.918 
+training step:   200, loss: 0.16589, precision: 0.931 recall: 0.900 f1: 0.915 
+training step:   300, loss: 0.14142, precision: 0.922 recall: 0.937 f1: 0.929 
+training step:   400, loss: 0.09725, precision: 0.985 recall: 0.928 f1: 0.955 
+training step:   500, loss: 0.23560, precision: 0.940 recall: 0.926 f1: 0.933 
+training step:   600, loss: 0.16518, precision: 0.959 recall: 0.959 f1: 0.959 
+training step:   700, loss: 0.16531, precision: 0.925 recall: 0.939 f1: 0.932 
+time consumption of training:11.53(min)
+start evaluate model...
+loss: 0.46151, precision: 0.844 recall: 0.839 f1: 0.842 accuracy: 0.841 
+time consumption of evaluating:59.68(min)
+epoch:7/15
+training step:   100, loss: 0.13984, precision: 0.924 recall: 0.953 f1: 0.938 
+training step:   200, loss: 0.05460, precision: 1.000 recall: 0.983 f1: 0.991 
+training step:   300, loss: 0.13021, precision: 0.973 recall: 0.973 f1: 0.973 
+training step:   400, loss: 0.24172, precision: 0.887 recall: 0.940 f1: 0.913 
+training step:   500, loss: 0.19881, precision: 0.915 recall: 0.956 f1: 0.935 
+training step:   600, loss: 0.13070, precision: 0.958 recall: 0.958 f1: 0.958 
+training step:   700, loss: 0.13321, precision: 0.974 recall: 0.937 f1: 0.955 
+time consumption of training:11.54(min)
+start evaluate model...
+loss: 0.49001, precision: 0.818 recall: 0.858 f1: 0.838 accuracy: 0.841 
+time consumption of evaluating:59.69(min)
+epoch:8/15
+training step:   100, loss: 0.09551, precision: 0.986 recall: 1.000 f1: 0.993 
+training step:   200, loss: 0.12838, precision: 0.943 recall: 0.985 f1: 0.964 
+training step:   300, loss: 0.07895, precision: 0.970 recall: 0.956 f1: 0.963 
+training step:   400, loss: 0.09019, precision: 0.965 recall: 0.948 f1: 0.957 
+training step:   500, loss: 0.10530, precision: 0.986 recall: 0.959 f1: 0.973 
+training step:   600, loss: 0.12049, precision: 0.968 recall: 0.897 f1: 0.931 
+training step:   700, loss: 0.16297, precision: 0.955 recall: 0.955 f1: 0.955 
+time consumption of training:11.52(min)
+start evaluate model...
+loss: 0.53177, precision: 0.841 recall: 0.845 f1: 0.843 accuracy: 0.844 
+time consumption of evaluating:59.67(min)
+epoch:9/15
+training step:   100, loss: 0.14309, precision: 0.928 recall: 0.955 f1: 0.941 
+training step:   200, loss: 0.06444, precision: 0.980 recall: 0.926 f1: 0.952 
+training step:   300, loss: 0.13335, precision: 0.953 recall: 0.938 f1: 0.946 
+training step:   400, loss: 0.15488, precision: 0.930 recall: 0.971 f1: 0.950 
+training step:   500, loss: 0.09562, precision: 0.935 recall: 0.967 f1: 0.951 
+training step:   600, loss: 0.10185, precision: 0.948 recall: 0.965 f1: 0.957 
+training step:   700, loss: 0.08282, precision: 0.955 recall: 0.969 f1: 0.962 
+time consumption of training:11.54(min)
+start evaluate model...
+loss: 0.54111, precision: 0.840 recall: 0.841 f1: 0.840 accuracy: 0.840 
+time consumption of evaluating:59.63(min)
+epoch:10/15
+training step:   100, loss: 0.09831, precision: 0.984 recall: 0.953 f1: 0.968 
+training step:   200, loss: 0.04816, precision: 1.000 recall: 0.972 f1: 0.986 
+training step:   300, loss: 0.06510, precision: 0.935 recall: 1.000 f1: 0.967 
+training step:   400, loss: 0.04619, precision: 0.985 recall: 0.985 f1: 0.985 
+training step:   500, loss: 0.12733, precision: 0.957 recall: 0.944 f1: 0.950 
+training step:   600, loss: 0.16076, precision: 0.972 recall: 0.920 f1: 0.945 
+training step:   700, loss: 0.09058, precision: 0.985 recall: 0.956 f1: 0.970 
+time consumption of training:11.52(min)
+start evaluate model...
+loss: 0.59407, precision: 0.845 recall: 0.851 f1: 0.848 accuracy: 0.849 
+time consumption of evaluating:59.69(min)
+saved the new best model with f1: 0.848
+epoch:11/15
+training step:   100, loss: 0.06110, precision: 0.967 recall: 1.000 f1: 0.983 
+training step:   200, loss: 0.10703, precision: 0.921 recall: 0.951 f1: 0.935 
+training step:   300, loss: 0.12555, precision: 0.938 recall: 0.938 f1: 0.938 
+training step:   400, loss: 0.04494, precision: 0.984 recall: 0.984 f1: 0.984 
+training step:   500, loss: 0.09821, precision: 0.953 recall: 0.953 f1: 0.953 
+training step:   600, loss: 0.05736, precision: 0.985 recall: 0.971 f1: 0.978 
+training step:   700, loss: 0.10907, precision: 1.000 recall: 0.938 f1: 0.968 
+time consumption of training:11.52(min)
+start evaluate model...
+loss: 0.59252, precision: 0.836 recall: 0.841 f1: 0.839 accuracy: 0.839 
+time consumption of evaluating:59.63(min)
+epoch:12/15
+training step:   100, loss: 0.07622, precision: 0.985 recall: 0.943 f1: 0.964 
+training step:   200, loss: 0.06885, precision: 0.968 recall: 0.984 f1: 0.976 
+training step:   300, loss: 0.04648, precision: 0.983 recall: 0.983 f1: 0.983 
+training step:   400, loss: 0.04721, precision: 0.969 recall: 1.000 f1: 0.984 
+training step:   500, loss: 0.09244, precision: 0.983 recall: 0.935 f1: 0.959 
+training step:   600, loss: 0.09956, precision: 0.933 recall: 0.966 f1: 0.949 
+training step:   700, loss: 0.08716, precision: 0.986 recall: 0.959 f1: 0.973 
+time consumption of training:11.51(min)
+start evaluate model...
+loss: 0.63854, precision: 0.822 recall: 0.854 f1: 0.838 accuracy: 0.841 
+time consumption of evaluating:59.47(min)
+epoch:13/15
+training step:   100, loss: 0.05655, precision: 0.984 recall: 0.968 f1: 0.976 
+training step:   200, loss: 0.05606, precision: 0.984 recall: 0.968 f1: 0.976 
+training step:   300, loss: 0.04536, precision: 0.984 recall: 0.984 f1: 0.984 
+training step:   400, loss: 0.09441, precision: 1.000 recall: 0.946 f1: 0.972 
+training step:   500, loss: 0.05530, precision: 0.982 recall: 0.948 f1: 0.965 
+training step:   600, loss: 0.05521, precision: 1.000 recall: 0.957 f1: 0.978 
+training step:   700, loss: 0.06997, precision: 0.938 recall: 0.984 f1: 0.961 
+time consumption of training:11.50(min)
+start evaluate model...
+loss: 0.66831, precision: 0.805 recall: 0.867 f1: 0.835 accuracy: 0.841 
+time consumption of evaluating:59.52(min)
+epoch:14/15
+training step:   100, loss: 0.02392, precision: 0.986 recall: 1.000 f1: 0.993 
+training step:   200, loss: 0.04706, precision: 0.986 recall: 0.971 f1: 0.978 
+training step:   300, loss: 0.05781, precision: 0.983 recall: 0.967 f1: 0.975 
+training step:   400, loss: 0.13881, precision: 0.950 recall: 0.905 f1: 0.927 
+training step:   500, loss: 0.08252, precision: 0.981 recall: 0.927 f1: 0.953 
+training step:   600, loss: 0.02628, precision: 1.000 recall: 1.000 f1: 1.000 
+training step:   700, loss: 0.04880, precision: 0.982 recall: 0.982 f1: 0.982 
+time consumption of training:11.50(min)
+start evaluate model...
+loss: 0.64994, precision: 0.813 recall: 0.859 f1: 0.835 accuracy: 0.839 
+time consumption of evaluating:59.61(min)
+epoch:15/15
+training step:   100, loss: 0.08920, precision: 0.985 recall: 0.970 f1: 0.977 
+training step:   200, loss: 0.03679, precision: 0.984 recall: 1.000 f1: 0.992 
+training step:   300, loss: 0.03199, precision: 0.983 recall: 0.983 f1: 0.983 
+training step:   400, loss: 0.01227, precision: 1.000 recall: 1.000 f1: 1.000 
+training step:   500, loss: 0.07987, precision: 1.000 recall: 0.931 f1: 0.964 
+training step:   600, loss: 0.04316, precision: 1.000 recall: 0.984 f1: 0.992 
+training step:   700, loss: 0.04424, precision: 1.000 recall: 0.971 f1: 0.985 
+time consumption of training:11.51(min)
+start evaluate model...
+loss: 0.65710, precision: 0.859 recall: 0.835 f1: 0.847 accuracy: 0.845 
+time consumption of evaluating:59.61(min)
+early stopped, no progress obtained within 5 epochs
+overall best f1 is 0.8480224854446899 at 10 epoch
+total training time consumption: 190.199(min)

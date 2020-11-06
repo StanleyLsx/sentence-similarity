@@ -57,8 +57,9 @@ def train(device, logger):
     batch_size = 128
     epoch = 15
     learning_rate = 0.0004
-    patience = 3
+    patience = 5
     print_per_batch = 100
+    is_early_stop = True
 
     train_file = 'datasets/train.csv'
     val_file = 'datasets/dev.csv'
@@ -69,6 +70,9 @@ def train(device, logger):
     criterion = torch.nn.CrossEntropyLoss()
 
     best_f1 = 0.0
+    best_at_epoch = 0
+    patience_counter = 0
+    very_start_time = time.time()
 
     train_data_manger = DataPrecessForSentence(train_data, logger)
     logger.info('train_data_length:{}\n'.format(len(train_data_manger)))
@@ -114,13 +118,19 @@ def train(device, logger):
         logger.info('start evaluate model...')
         val_measures, val_label_results = evaluate(logger, device, model, criterion, val_loader)
 
-        patience_counter = 0
-        if val_measures['f1'] >= best_f1 and val_measures['f1'] > 0.70:
-            best_f1 = val_measures['f1']
-            logger.info('find the new best model with f1: %.3f' % best_f1)
+        if val_measures['f1'] > best_f1:
             patience_counter = 0
+            best_f1 = val_measures['f1']
+            best_at_epoch = i + 1
+            logger.info('saved the new best model with f1: %.3f' % best_f1)
         else:
             patience_counter += 1
-        if patience_counter >= patience:
-            logger('Early stopping: patience limit reached, stopping...')
-            break
+
+        if is_early_stop:
+            if patience_counter >= patience:
+                logger.info('early stopped, no progress obtained within {} epochs'.format(patience))
+                logger.info('overall best f1 is {} at {} epoch'.format(best_f1, best_at_epoch))
+                logger.info('total training time consumption: %.3f(min)' % ((time.time() - very_start_time) / 60))
+                return
+    logger.info('overall best f1 is {} at {} epoch'.format(best_f1, best_at_epoch))
+    logger.info('total training time consumption: %.3f(min)' % ((time.time() - very_start_time) / 60))
