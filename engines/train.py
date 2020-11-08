@@ -82,7 +82,7 @@ def train(device, logger):
     logger.info('val_data_length:{}\n'.format(len(val_data_manger)))
     val_loader = DataLoader(val_data_manger, shuffle=False, batch_size=batch_size)
 
-    model = EsimModel(device).to(device)
+    model = BertwwmModel(device).to(device)
     params = list(model.parameters())
     optimizer = AdamW(params, lr=learning_rate)
     # 定义梯度策略
@@ -100,6 +100,7 @@ def train(device, logger):
             logits, probabilities = model(s1_ids, s1_masks, s2_ids, s2_masks)
             loss = criterion(logits, labels)
             loss.backward()
+            torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
             optimizer.step()
             loss_sum += loss.item()
             correct_preds += correct_predictions(probabilities, labels)
